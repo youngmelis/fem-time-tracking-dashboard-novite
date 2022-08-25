@@ -1,0 +1,91 @@
+@use '../abstracts/' as *;
+
+.card{
+    border-radius: 15px 15px 100px 100px;
+    position: relative;
+
+    &__report {
+        background-color: map-get($colors, neutral, 800);
+        border-radius: 15px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 2rem;
+
+        &:where(:hover, :focus){
+            @include card__report-hover;
+            @include hovered;
+        }
+    }
+}
+
+.flex-title > svg {
+    @include hovered;
+}
+
+.svg-line {
+    display: flex;
+    justify-content: end;
+    margin-right: 1rem;
+}
+
+
+@media (min-width: map-get($breakpoints, medium)){
+    .card {
+        height: 250px;
+
+        > svg {
+            position: absolute;
+            top: 0;
+            right: 1rem;
+        }
+    
+        &__report {
+            position: absolute;
+            bottom: 0;
+    
+        }
+    }
+
+}
+
+@media(max-width: map-get($breakpoints, medium)){
+    .flex-hours {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+}
+
+.flex-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.card[aria-details="work"] {
+    background-color: map-get($colors, primary, work);
+}
+
+.card[aria-details="play"] {
+    background-color: map-get($colors, primary, play);
+}
+
+.card[aria-details="study"] {
+    background-color: map-get($colors, primary, study);
+}
+
+.card[aria-details="exercise"] {
+    background-color: map-get($colors, primary, exercise);
+}
+
+.card[aria-details="social"] {
+    background-color: map-get($colors, primary, social);
+}
+
+.card[aria-details="self-care"] {
+    background-color: map-get($colors, primary, self-care);
+}
+    
+

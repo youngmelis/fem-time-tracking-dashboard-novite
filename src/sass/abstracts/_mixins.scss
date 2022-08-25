@@ -1,0 +1,68 @@
+@use 'variables' as *;
+@use 'functions' as *;
+
+@mixin name-desktop(){
+    font-family: $ff-name;
+    font-size: $fs-name-desktop;
+    font-weight: $fw-name;
+    color: map-get($colors, primary, text);
+}
+
+@mixin name-mobile(){
+    font-family: $ff-name;
+    font-size: $fs-name-mobile;
+    font-weight: $fw-name;
+    color: map-get($colors, primary, text);
+}
+
+@mixin description__default(){
+    font-family: $ff-description;
+    font-size: $fs-description;
+    font-weight: $fw-description;
+    color: map-get($colors, primary, text);
+}
+
+@mixin description(){
+    font-family: $ff-description;
+    font-size: $fs-description;
+    font-weight: $fw-description;
+    color: map-get($colors, neutral, 100);
+}
+
+@mixin title(){
+    font-family: $ff-title;
+    font-size: $fs-title;
+    font-weight: $fw-title;
+    color: map-get($colors, primary, text);
+}
+
+@mixin hours-desktop(){
+    font-family: $ff-hours;
+    font-size: $fs-hours-desktop;
+    font-weight: $fw-hours;
+    color: map-get($colors, primary, text);
+}
+
+@mixin hours-mobile(){
+    font-family: $ff-hours;
+    font-size: $fs-hours-mobile;
+    font-weight: $fw-hours;
+    color: map-get($colors, primary, text);
+}
+
+@mixin hovered {
+    cursor: pointer;
+}
+
+@mixin card__report-hover{
+    background-color: map-get($colors, neutral, 600);
+}
+
+@mixin mq($key) {
+    $bp: map-get($breakpoints, $key);
+
+    @media only screen and (min-width: $bp){
+        @content;
+    }
+}
+

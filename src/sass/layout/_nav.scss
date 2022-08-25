@@ -1,0 +1,58 @@
+@use '../abstracts/' as *;
+
+.profile-box {
+    background-color: map-get($colors, neutral, 800);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    background-color: map-get($colors, primary, card);
+    border-radius: 15px;
+
+    padding: 2rem;
+
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    @include mq(medium){
+        display: block;
+    }
+}
+
+.profile-box > nav {
+    padding: 1rem;
+    width: 100%;
+
+    @include mq(medium){
+        padding: 2rem;
+    }
+}
+
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include mq(medium) {
+        flex-direction: column;
+        gap: 1em;
+        justify-content: center;
+    }
+}
+
+.profile > img {
+    width: 80px;
+
+    border: 5px solid white;
+    border-radius: 50%;
+}
+
+.profile > h1 {
+    margin-bottom: 3rem;
+}
+

@@ -1,0 +1,32 @@
+@use '../abstracts/' as *;
+
+.grid-container {
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+    width: 85%;
+}
+
+
+@media (min-width: map-get($breakpoints, medium)) {
+    .grid-container{
+        width: 55%;
+        margin: auto;
+    
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 2rem;
+    }
+    
+    .grid-container > .profile-box {
+        grid-row: span 2;
+    }
+    
+    .exercise {
+        grid-column-start: 2;
+    }
+}
+
+
+

@@ -1,0 +1,32 @@
+@use '../abstracts/' as *;
+
+.name {
+    @include mq(medium){
+        @include name-desktop();
+    }
+    @include name-mobile();
+}
+
+.description {
+    @include description();
+    
+    &:where(:hover, :focus){
+        @include hovered();
+        color: map-get($colors, primary, text);
+    }
+
+    &__default{
+        @include description__default;
+    }
+}
+
+.title {
+    @include title();
+}
+
+.hours {
+    @include hours-mobile();
+    @include mq(medium){
+        @include hours-desktop();
+    }
+}
